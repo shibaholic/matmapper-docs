@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="assets/matmapper_logo.svg" alt="Logo" width="160" height="150">
+    <img src="assets/matmapper_logo_2.png" alt="Logo" height="150">
   </a>
 
 <h3 align="center">MatMapper Documentation</h3>
