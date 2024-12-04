@@ -14,7 +14,7 @@ The MatMapper project is a web application system that allows users to merge and
 deduplicate materials data spreadsheets.
 
 Currently accessible on the temporary domain [shibaholic.dev](shibaholic.dev). 
-But requires registration token to set up user.
+But requires a registration token to set up a user.
 
 ![Intro Screenshot](assets/intro.png)
 
@@ -32,20 +32,20 @@ deduplicate their existing data.
 
 ## How do you use it
 
-First, currently only invited users are able to use the application, 
-which is controlled by only allowing users with a unique access token to register a user account.
+Firstly, currently only invited users are able to use the application, 
+which is controlled by only allowing users with a unique registration token to register a user account.
 
 In the dashboard, users create a new project by choosing a task and 
 uploading their spreadsheet files.
 
-The `Merging Task` is for merging 1 list of new data into a list of master data.
+The `Merging Task` is for merging 1 list of new data into 1 list of master data.
 
 The `Deduplication Task` is for deduplicating 1 list of data.
 
 ![create-project screenshot](assets/create-project.png)
 
-Once successfully uploaded, then users click on the project which opens the project modal. 
-This shows a preview of their uploaded data, some details and the steps in the workflow.
+Once successfully uploaded, users click on the project which opens the project modal. 
+This shows a preview of their uploaded data and some details.
 
 Next, the user clicks on `Start Cross Matching` in the top-right corner to make the server 
 perform cross-column matching in order to find entries that may in fact be the same between 
@@ -53,8 +53,7 @@ the 2 lists.
 
 ![project-modal screenshot](assets/project-modal.png)
 
-Once cross-column matching has finished processing, 
-then the server updates the project state to `Cross Matching Completed`.
+Once cross-column matching has finished, the server updates the project state to `Cross Matching Completed`.
 
 ![cross-matching-completed screenshot](assets/cross-matching-completed.png)
 
@@ -66,9 +65,9 @@ showing which columns matched and what their values are.
 The user can press the buttons on the screen or use keybindings to mark each match as `validated`,
 `for later inspection` or `discard`.
 
-Finally, the user can export which is a spreadsheet containing the keys of the validated matches. 
-It is expected that the user themselves will use the outputed list of matched keys to clean 
-their data (this application does not directly change user data).
+Finally, the user can export their desired match validation type as a spreadsheet containing the keys. 
+It is the user's responsibility to use the exported keys to clean their own data themselves, as
+MatMapper ultimately does not clean their data (which would usually be inside an ERP system).
 
 ![validation screenshot](assets/intro.png)
 
@@ -86,7 +85,7 @@ The project is separated into 3 main parts. The frontend, backend API and databa
 
 ### Frontend
 
-The main technologies used in the frontend user interface are React and TypeScript. 
+The main technologies used in the frontend user interface are React and TypeScript. As well as Vite for fast HMR.
 
 #### Packages used
 
@@ -95,6 +94,7 @@ The main technologies used in the frontend user interface are React and TypeScri
 - react-window
 - react-data-grid
 - SignalR Javascript client
+- diff
 
 #### Features
 
@@ -144,8 +144,8 @@ The package used for unit testing was XUnit.
 
 ## Deployment
 
-There is currently an issue with the domain name provider (one.com) that is 
-preventing utilization of the matmapper.com domain.
+There is currently an issue with the domain name provider that is 
+preventing utilization of the `matmapper.com` domain.
 
 Instead, the temporary domain [shibaholic.dev](shibaholic.dev) is being 
 hosted with Cloudflare, which was easy to set up (HTTPS, firewalls).
