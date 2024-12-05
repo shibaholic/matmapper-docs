@@ -13,8 +13,7 @@
 The MatMapper project is a web application system that allows users to merge and 
 deduplicate materials data spreadsheets.
 
-Currently accessible on the temporary domain [shibaholic.dev](shibaholic.dev). 
-But requires a registration token to set up a user.
+Accessible at [matmapper.com](matmapper.com), but it is required that you ask for a registration token in order to create a user account to use the service.
 
 ![Intro Screenshot](assets/intro.png)
 
@@ -143,12 +142,6 @@ The package used for unit testing was XUnit.
 - ...
 
 ## Deployment
-
-There is currently an issue with the domain name provider that is 
-preventing utilization of the `matmapper.com` domain.
-
-Instead, the temporary domain [shibaholic.dev](shibaholic.dev) is being 
-hosted with Cloudflare, which was easy to set up (HTTPS, firewalls).
 
 The application is currently being hosted on a Hetzner Cloud instance 
 running Ubuntu.
